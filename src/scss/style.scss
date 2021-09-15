@@ -1,0 +1,307 @@
+/*background: linear-gradient(90deg, rgba(35,76,167,1) 0%, rgba(234,89,110,1) 100%);*/
+@import 'variables';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background: $bg;
+    font-family: $font1;
+}
+
+h1,h2,h3,h4,h5,p {
+    color: $white;
+}
+
+h5 {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.d-flex-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+span.graydot {
+    background-color: rgba(255, 255, 255, 0.452);
+    width: 12px;
+    height: 12px;
+    display: block;
+    border-radius: 4px;
+}
+span.goldot {
+    background-color: #B99539;
+    width: 12px;
+    height: 12px;
+    display: block;
+    border-radius: 4px;
+}
+span.greendot{
+    background-color:#3EBE79;
+    width: 12px;
+    height: 12px;
+    display: block;
+    border-radius: 4px;
+}
+#kanban {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    padding-top: 100px;
+
+    .kanbanColumn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .columnTop {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0px 12px;
+            .rightSide {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                color: $white;
+                font-size: 20px;
+                .add {
+                    top: 5px;
+                    position: relative;
+                }
+            }
+        }
+
+        &:nth-child(1) {
+            .header {
+                border: 1px solid #E5E5E5;
+            }
+        }
+
+        &:nth-child(2) {
+            .header {
+                border: 1px solid #B99539;
+            }
+        }
+
+        &:nth-child(3) {
+            .header {
+                border: 1px solid #3EBE79;
+            }
+        }
+        .addBtn {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 21px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+        }
+    }
+
+    .dropabble {
+        margin: 8px;
+    }
+
+    .header {
+        font-size: 16px;
+        color: $white;
+        border-radius: 4px;
+        padding: 4px 20px 4px 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+    }
+    span {
+        font-size: 14px;
+        color: gray;
+    }
+    .gray {
+        background: $gray;
+    }
+    .top {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 0px 10px 4px;
+    }
+    .bottom {
+        display: flex;
+        gap: 8px;
+        margin: 10px 0px 10px 0px;
+    }
+
+    .newTask {
+        display: block;
+        position: absolute;
+        right: 80px;
+        top: 40px;
+        button {
+            padding: 8px 16px;
+            background: linear-gradient(97.24deg, #234CA7 -24.31%, #EA596E 131.07%);
+            border-radius: 4px;
+            color: $white;
+            border: 0;
+            cursor: pointer;
+        }
+    }
+    .nullColumn {
+        border: 2px dashed $gray;
+        padding: 10px;
+        width: 280px;
+        min-height: 90px;
+        color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.slideModal {
+    .columnName {
+        border: 1px solid #E5E5E5;
+        display: flex;
+        align-items: center;
+        color: $white;
+        padding: 5px 15px 5px 10px;
+        border-radius: 4px;
+        width: 130px;
+        gap: 5px;
+    }
+    .header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+        .input:focus, .input:focus-visible {
+            outline: none;
+        }
+    }
+    .content {
+        padding: 20px 20px;
+        .icon {
+            color: $darkgray;
+            font-weight: 600;
+        }
+        .d-flex {
+            margin: 10px 0px;
+        }
+    }
+    .files {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        .fileAdd {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed $gray;
+            padding: 20px 30px;
+            border-radius: 4px;
+            width: 100px;
+            margin: 5px 0px;
+            color: $white;
+        }
+        .fileWhite {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px dashed $gray;
+                height: 72px;
+                border-radius: 4px;
+                width: 100px;
+                margin: 5px 0px;
+                background-color: $white;
+        }
+    }
+    .subtasks {
+        margin: 20px 0px;
+        .subTask {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5px;
+            background-color: $gray;
+            border-radius: 4px;
+            padding: 4px 10px;
+            color: $white;
+            margin: 10px 0px;
+        }
+    }
+    .notifys {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0px;
+        background-color: $gray;
+    }
+    .addBtn {
+        display: flex;
+        justify-content: right;
+        margin-top: 30px;
+        button {
+            font-size: 18px;
+            text-align: right;
+            padding: 8px 16px;
+            background: #B99539;
+            border-radius: 4px;
+            color: #FFFFFF;
+            border: 0;
+            cursor: pointer;
+        }
+    }
+}
+.nameInput {
+    width: 100%;
+    height: 34px;
+    font-size: 20px;
+    background: transparent;
+    border: 0;
+    color: #ffffff;
+    outline: none;
+    &::placeholder {
+        font-size: 16px;
+    }
+}
+.contentInput {
+    width: 100%;
+    height: 34px;
+    font-size: 16px;
+    background: transparent;
+    border: 0;
+    color: #ffffff;
+    outline: none;
+    &::placeholder {
+        font-size: 16px;
+    }
+}
+.selectInput {
+    width: 100%;
+    height: 34px;
+    font-size: 16px;
+    background: transparent;
+    border: 0;
+    color: #ffffff;
+    outline: none;
+    &::placeholder {
+        font-size: 16px;
+    }
+    &> div{
+        background: #242424;
+        border: transparent;
+    }
+}
+label {
+    color: $white;
+    width: 50%;
+    font-size: 16px;
+}
